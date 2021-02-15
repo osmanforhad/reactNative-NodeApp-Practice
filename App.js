@@ -2,6 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import React, {useState} from 'react';
 import { Button, StyleSheet, Text, View, TextInput, ScrollView} from 'react-native';
 
+import Header from './src/components/Header';
+
 export default function App() {
 
   /**state define */
@@ -15,7 +17,12 @@ export default function App() {
   }//end of the array function
 
   return (
-    <View style={(styles.container)}>
+    <View>
+    {/* include Header file */}
+    <Header title="Todo List"/>
+
+    {/*starting main page component */}
+      <View style={(styles.container)}>
       <View>
         <TextInput
          placeholder="Enter Todo Item"
@@ -39,12 +46,13 @@ export default function App() {
       {/*end of Rendaring the React Item */}
       <StatusBar style="auto" />
     </View>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    padding: 60
+    padding: 30
   },
   textInput:{
     padding:10,
